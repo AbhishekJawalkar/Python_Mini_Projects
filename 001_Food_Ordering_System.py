@@ -31,8 +31,26 @@ print("")
 print("Enter the order using Serial Numbers of the items. (Keep Spaces)")
 print("For Multiple Same items repeat the number again.\n    eg:- For 2 Roti's - 5 5")
 print("")
-Menu = {1:"Biryani", 2:"Kebabs", 3:"Murg Mussallam", 4:"Steam Rice", 5:"Roti", 6:"Shawarma",7:"Tandoori    Chicken", 8:"Chatpata Chicken",}
-Prices = {1:300,2:250,3:275,4:100,5:50,6:150,7:260,8:200,}
+Menu = {
+    1:"Biryani", 
+    2:"Kebabs", 
+    3:"Murg Mussallam", 
+    4:"Steam Rice", 
+    5:"Roti", 
+    6:"Shawarma",
+    7:"Tandoori Chicken", 
+    8:"Chatpata Chicken"
+    }
+Prices = {
+    1:300,
+    2:250,
+    3:275,
+    4:100,
+    5:50,
+    6:150,
+    7:260,
+    8:200
+    }
 order = list(map(int, input().split()))
 while True:
     print("")
@@ -50,16 +68,20 @@ while True:
         break
     else:
         print("\nPlease enter Y or N.")
-print("\n========== BILL ==========")
-
+print("\n----------------------------------")
+print("============== BILL ==============")
+print("----------------------------------")
+print("")
+print(f"Customer Name: {Name}")
+print(f"Customer Contact: {Contact}")
+print("")
 total = 0
-
 for item in order:
     if item in Menu:
         print(f"{Menu[item]} - ₹{Prices[item]}")
         total += Prices[item]
-
-print("--------------------------")
+print("")
+print("----------------------------------")
 print(f"Total Bill: ₹{total}")
-print("==========================")
+print("==================================")
 print("")
